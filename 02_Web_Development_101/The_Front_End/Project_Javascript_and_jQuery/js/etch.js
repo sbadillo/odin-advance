@@ -3,6 +3,16 @@ $(document).ready(function(){
 	createGrid(960,16)
    	fillPalette();
 
+
+	// shake action!
+	$('#shake').click(async function(){
+		$('#etch-container').addClass('shake-constant shake-chunk')
+		shake();
+		await sleep(600);
+		$('#etch-container').removeClass('shake-constant shake-chunk')
+		;
+	});
+
 	// default color:
 	var currentColor = '#000';
 	$("#color").css('background-color', currentColor); 
@@ -21,11 +31,12 @@ $(document).ready(function(){
 	$('#reset').click(function(event) {
 		/* Act on the event */
 		reset();
-			// draw
+		// draw
 		$(".block").mouseover(function(event) {
 			$(this).css("background-color", currentColor);
 			console.log('drawing!')
-	});
+		});
+
 	});
 
 });
@@ -37,7 +48,6 @@ function createGrid(etchsize,rowsize){
 	$('#info').text("grid size: "+rowsize+"x"+rowsize);
 
 	$('#etch-container').empty();
-
 
 	$('#etch-container').css("width", etchsize);
 
@@ -80,13 +90,30 @@ function reset(){
     var size = prompt("How many squares per sides you want?:", "16");
     
     console.log(isNaN(size));
-    if (!size || isNaN(size) || size >150 || size<=0)  {
+    if (!size || isNaN(size) || size >50 || size<=0)  {
     	console.log('false input, back to default :o')
-    	alert('Please enter only numbers between 1 and 150');
+    	alert('Please enter only numbers between 1 and 50');
         createGrid(960,16);
     } else {
         createGrid(960,size);
     }   
 }
 
+function shake(){
 
+	// $("#etch-container").addClass('shake-rotate');
+
+	var total = $("#etch-container > div").length;
+	var erase = Math.floor(total* 0.50);
+
+	Math.floor((Math.random() * 10) + 1);
+
+	for (var i = 0; i < erase; i++) {
+		eraseme = Math.floor((Math.random() * total) + 1);
+		$("#etch-container > div").eq(eraseme).css("background-color", "#fff")
+	}
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
