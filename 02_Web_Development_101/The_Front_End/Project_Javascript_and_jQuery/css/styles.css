@@ -1,0 +1,77 @@
+html {
+	font-family: sans-serif;
+}
+
+#wrapper {
+	max-width: 940px;
+	margin: 0 auto;
+	text-align: center;
+	display:inline block;
+}
+
+#settings {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#color {
+	width: 20px;
+	height: 20px;
+	line-height: 0px;
+	border: 10px solid #ddd;
+	font-size: 0px;
+	float: left;
+	margin-top:33px;
+}
+
+#palette {
+	height: 20px;
+	width: 200px;
+	border: 10px solid #ddd;
+	float: left;
+	border-radius: 0 7px;
+	margin-left: 70px; 
+	margin-top: 33px;
+}
+
+#reset {
+	font-weight: 200;
+	border-radius: 0 7px;
+	border: 2px solid #ddd;
+	float:right;
+	line-height: 25px;
+	margin-right: 40px;
+	margin-top: 37px;
+}
+
+#info{
+	float:right;
+	margin-top: 33px;
+	line-height: 40px;
+}
+
+#etch-container {
+	box-sizing: border-box;
+	width: 400px;
+	line-height: 0px;
+	border: 100px solid #f4424b;
+	border-radius: 70px;
+	font-size: 0em;
+	margin: 20px auto;
+}
+
+.block {
+	border: none;
+	box-sizing: border-box;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	line-height: 0px;
+	margin-top:-1px;
+}
+
+.colorblock {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
