@@ -16,7 +16,6 @@ $(document).ready(function(){
 	// draw
 	$(".block").mouseover(function(event) {
 		$(this).css("background-color", currentColor);
-		console.log('drawing!')
 	});
 
 	$('#reset').click(function(event) {
@@ -81,12 +80,13 @@ function reset(){
     var size = prompt("How many squares per sides you want?:", "16");
     
     console.log(isNaN(size));
-    if (isNaN(size) || size == "") {
+    if (!size || isNaN(size) || size >150 || size<=0)  {
+    	console.log('false input, back to default :o')
+    	alert('Please enter only numbers between 1 and 150');
         createGrid(960,16);
     } else {
         createGrid(960,size);
-    }
-    
+    }   
 }
 
 

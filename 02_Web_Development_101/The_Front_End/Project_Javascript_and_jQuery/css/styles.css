@@ -64,10 +64,10 @@ html {
 	border: none;
 	box-sizing: border-box;
 	display: inline-block;
+	border:none;
 	margin: 0;
 	padding: 0;
 	line-height: 0px;
-	margin-top:-1px;
 }
 
 .colorblock {
