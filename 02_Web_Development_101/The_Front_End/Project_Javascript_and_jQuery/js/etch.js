@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	reset();
+	createGrid(960,16)
    	fillPalette();
 
 	// default color:
@@ -79,7 +79,9 @@ function getRandomColor() {
 function reset(){
     var txt;
     var size = prompt("How many squares per sides you want?:", "16");
-    if (size == null || size == "") {
+    
+    console.log(isNaN(size));
+    if (isNaN(size) || size == "") {
         createGrid(960,16);
     } else {
         createGrid(960,size);
